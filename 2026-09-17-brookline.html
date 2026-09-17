@@ -340,7 +340,7 @@
 
   <div class="legend"><span>NEW = new listing</span><span>ACT = active</span><span>PCG = price change</span><span>BOM = back on market</span><span>DOM = days on market</span></div>
 
-  <footer>Source: MLS PIN Pinergy, Tour/Open House search (broker tours), Brookline MA, all property types, pulled Sep 17, 2026, 12:19 PM ET. Photos are MLS PIN listing photos.  "Seen" marks are saved on this device only.</footer>
+  <footer>Source: MLS PIN Pinergy, Tour/Open House search (broker tours), Brookline MA, all property types, pulled Sep 17, 2026, 12:20 PM ET. Photos are MLS PIN listing photos.  "Seen" marks are saved on this device only.</footer>
 </div>
 <script>
 (function(){
@@ -468,7 +468,7 @@
     document.getElementById('grid').hidden=(view!=='grid');
     document.getElementById('rows').hidden=(view!=='rows');
     document.querySelectorAll('.chip.pchip').forEach(function(b){ var mn=b.dataset.min?+b.dataset.min:null, mx=b.dataset.max?+b.dataset.max:null; b.setAttribute('aria-pressed',(F.pmin===mn&&F.pmax===mx&&(!b.dataset.type||filter===b.dataset.type))?'true':'false'); });
-    document.documentElement.style.setProperty('--tb-bottom',(document.getElementById('nownext').offsetHeight+document.getElementById('toolbar').offsetHeight)+'px');
+    var tbEl=document.getElementById('toolbar'); document.documentElement.style.setProperty('--tb-bottom',((parseFloat(getComputedStyle(tbEl).top)||0)+tbEl.offsetHeight)+'px');
     document.getElementById('noMatch').hidden=!(shown===0&&cards.length>0);
     document.getElementById('resultCount').textContent=shown+' of '+cards.length;
     document.querySelectorAll('.prow').forEach(function(p){ p.classList.toggle('seen',!!seen[p.dataset.mls]) });
